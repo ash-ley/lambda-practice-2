@@ -8,6 +8,6 @@ resource "aws_lambda_function" "my_lambda" {
   filename = data.archive_file.lambda_file.output_path
   function_name = "metadata"
   role = aws_iam_role.lambda_role.arn
-  handler = "metadata.lambda_handler"
+  handler = "metadata.get_metadata"
   runtime = "python3.8"
 }
