@@ -4,6 +4,10 @@ reated by https://www.toptal.com/developers/gitignore/api/terraform
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*
+.terraform.lock.hcl
+
+# .zip files
+*.zip
 
 # .tfstate files
 *.tfstate
