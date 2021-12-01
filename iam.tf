@@ -41,12 +41,11 @@ resource "aws_iam_policy" "my_policy" {
           {
             "Action" : [
                 "s3:GetObject",
-                "s3:List*",
-                "s3:PutObject"
+                "s3:GetObjectAcl"
             ],
             "Effect" : "Allow",
             "Sid" : "S3ObjectActionsForLambda",
-            "Resource" : ["arn:aws:s3:::*"]
+            "Resource" : ["arn:aws:s3:::ta-ar-lambda-practice-2/*"]
             },
             {
               "Action" : [
