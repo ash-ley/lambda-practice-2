@@ -19,3 +19,9 @@ resource "aws_cloudwatch_event_rule" "s3-uploads" {
 }
 EOF
 }
+
+resource "aws_cloudwatch_event_target" "lambda" {
+  target_id = "metadata"
+  rule      = aws_cloudwatch_event_rule.s3-uploads.id
+  arn       = aws_lambda_function.my_lambda.arn
+}
