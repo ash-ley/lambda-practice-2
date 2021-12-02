@@ -8,12 +8,9 @@ resource "aws_cloudwatch_event_rule" "s3-uploads" {
 	"account": ["${var.accountID}"],
 	"detail": {
 		"eventSource": ["s3.amazonaws.com"],
-		"eventName": ["PutObject"],
+		"eventName": ["PutObject","CompleteMultipartUpload"],
 		"requestParameters": {
-			"bucketName": ["ta-ar-lambda-practice-2"],
-			"key": [{
-				"prefix": "*"
-			}]
+			"bucketName": ["ta-ar-lambda-practice-2"]
 		}
 	}
 }

@@ -1,4 +1,4 @@
 variable "accountID" {
-  type = string
+  type        = string
   description = "The account ID for your AWS"
 }

@@ -7,8 +7,10 @@ resource "aws_s3_bucket" "lambda_practice_2" {
 }
 
 resource "aws_dynamodb_table" "lambda_table" {
-  name = "metadata"
-  hash_key = "fileName"
+  name           = "metadata"
+  hash_key       = "fileName"
+  write_capacity = 20
+  read_capacity  = 20
 
   attribute {
     name = "fileName"
